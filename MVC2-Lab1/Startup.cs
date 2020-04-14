@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MVC2_Lab1.Service;
 
 namespace MVC2_Lab1
 {
@@ -24,6 +26,8 @@ namespace MVC2_Lab1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddSingleton<IGetIpAddressService, GetIpAddressService>();
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddControllersWithViews();
         }
 
