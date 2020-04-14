@@ -8,7 +8,7 @@ namespace MVC2_Lab1.Service
 {
     public interface IGetIpAddressService
     {
-        IPCheck Get();
+        //IPCheck Get();
         string GetIPAddress();
     }
 }

@@ -7,18 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using MVC2_Lab1.Models;
 using MVC2_Lab1.Service;
-using MVC2_Lab1.ViewModels;
+
 
 namespace MVC2_Lab1.Controllers
 {
     public class GetIPController : Controller
     {
-        private readonly IActionContextAccessor _accessor;
         private readonly IGetIpAddressService _ipAdressService;
 
-        public GetIPController(IGetIpAddressService ipAddressService, IActionContextAccessor accessor)
+        public GetIPController(IGetIpAddressService ipAddressService)
         {
-            _accessor = accessor;
             _ipAdressService = ipAddressService;
         }
 

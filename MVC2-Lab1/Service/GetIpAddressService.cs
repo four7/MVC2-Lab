@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using MVC2_Lab1.Controllers;
 using MVC2_Lab1.Models;
-using MVC2_Lab1.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,18 +19,13 @@ namespace MVC2_Lab1.Service
             _accessor = accessor;
         }
 
-        public IPCheck Get()
-        {
-            IPCheck test = new IPCheck();
-            _accessor.ActionContext.HttpContext.Connection.RemoteIpAddress.ToString();
+        //public IPCheck Get()
+        //{
+        //    IPCheck test = new IPCheck();
+        //    _accessor.ActionContext.HttpContext.Connection.RemoteIpAddress.ToString();
 
-            return test;
-        }
-
-        public string GetIpAddress()
-        {
-            return _accessor.ActionContext.HttpContext.Connection.RemoteIpAddress.ToString();
-        }
+        //    return test;
+        //}
 
         public string GetIPAddress()
         {
